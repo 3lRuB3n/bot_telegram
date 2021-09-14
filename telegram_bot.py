@@ -1,13 +1,5 @@
-
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-#import time
-#time.sleep(60)
-
-"""
-This is a detailed example using almost every command of the API
-"""
-
+#Este es un bot para controlar un equipo de musica
+#Mas info en https://github.com/3lRuB3n/bot_telegram/
 import telebot
 from telebot import types
 import time
