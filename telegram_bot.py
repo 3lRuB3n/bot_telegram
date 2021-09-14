@@ -22,9 +22,9 @@ commands = { # command description used in the "help" command
             'ayuda': 'Da informacion sobre los comandos disponibles',
             'exec': 'Ejecuta un comando',
             'temp': 'Comprueba la temperatura de la raspberry',
-            'reinicia': 'Reinicia el equipo'
-            'apaga': 'Apaga el equipo'
-            'actualizar_equipo': 'Descarga, instala y elimina los paquetes de software'
+            'reinicia': 'Reinicia el equipo',
+            'apaga': 'Apaga el equipo',
+            'actualizar_equipo': 'Descarga, instala y elimina los paquetes de software',
             'actualizar_bot': 'Descarga la última versión del bot en el repositorio de github: https://github.com/3lRuB3n/bot_telegram'
 }
 
