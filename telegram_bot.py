@@ -1,12 +1,5 @@
-
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-#import time
-#time.sleep(60)
-
-"""
-This is a detailed example using almost every command of the API
-"""
+#Este programa es para hacer un bot de telegram, más info en https://github.com/3lRuB3n/bot_telegram
+#Este programa usa las librerías: pyTelegramBotAPI, 
 
 import telebot
 from telebot import types
@@ -19,12 +12,11 @@ knownUsers = [681682244] # todo: save these in a file,
 userStep = {} # so they won't reset every time the bot restarts
 
 commands = { # command description used in the "help" command
-            'ayuda': 'Da informacion sobre los comandos disponibles',
             'exec': 'Ejecuta un comando',
             'temp': 'Comprueba la temperatura de la raspberry',
-            'reinicia': 'Reinicia el equipo'
-            'apaga': 'Apaga el equipo'
-            'actualizar_equipo': 'Descarga, instala y elimina los paquetes de software'
+            'reinicia': 'Reinicia el equipo',
+            'apaga': 'Apaga el equipo',
+            'actualizar_equipo': 'Descarga, instala y elimina los paquetes de software',
             'actualizar_bot': 'Descarga la última versión del bot en el repositorio de github: https://github.com/3lRuB3n/bot_telegram'
 }
 
