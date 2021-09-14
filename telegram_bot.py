@@ -119,7 +119,7 @@ def command_long_text(m):
     os.system("sudo apt-get autoclean -y")    #elimina paquetes antiguos
     result = f.read()
     bot.send_message(cid, ""+result)
-    
+
 # Descarga telegram_bot.py
 @bot.message_handler(commands=['actualizar_bot'])
 def command_long_text(m):
