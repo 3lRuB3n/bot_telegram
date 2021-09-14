@@ -1,5 +1,12 @@
-#Este programa es para hacer un bot de telegram, más info en https://github.com/3lRuB3n/bot_telegram
-#Este programa usa las librerías: pyTelegramBotAPI, 
+
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#import time
+#time.sleep(60)
+
+"""
+This is a detailed example using almost every command of the API
+"""
 
 import telebot
 from telebot import types
@@ -12,6 +19,7 @@ knownUsers = [681682244] # todo: save these in a file,
 userStep = {} # so they won't reset every time the bot restarts
 
 commands = { # command description used in the "help" command
+            'ayuda': 'Da informacion sobre los comandos disponibles',
             'exec': 'Ejecuta un comando',
             'temp': 'Comprueba la temperatura de la raspberry',
             'reinicia': 'Reinicia el equipo',
@@ -111,7 +119,7 @@ def command_long_text(m):
     os.system("sudo apt-get autoclean -y")    #elimina paquetes antiguos
     result = f.read()
     bot.send_message(cid, ""+result)
-    
+
 # Descarga telegram_bot.py
 @bot.message_handler(commands=['actualizar_bot'])
 def command_long_text(m):
@@ -152,11 +160,11 @@ def command_long_text(m):
     bot.send_message(cid, "Resultado: "+result)
 
 
-# filter on a specific message
-#@bot.message_handler(func=lambda message: message.text == "Hola")
+#@bot.message_handler(func=lambda message: message.text == "Hijoputa")
 #def command_text_hi(m):
-#    bot.send_message(m.chat.id, "Muy buenas")
+#    bot.send_message(m.chat.id, "Bocachancla")
 
+#Esto responde a mensajes especificos
 
 
 @bot.message_handler(func=lambda message: True, content_types=['text'])
