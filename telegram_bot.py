@@ -160,20 +160,11 @@ def command_long_text(m):
     bot.send_message(cid, "Resultado: "+result)
 
 
-# filter on a specific message
-@bot.message_handler(func=lambda message: message.text == "Hola")
-def command_text_hi(m):
-    bot.send_message(m.chat.id, "Muy buenas")
-@bot.message_handler(func=lambda message: message.text == "Hijoputa")
-def command_text_hi(m):
-    bot.send_message(m.chat.id, "Bocachancla")
-@bot.message_handler(func=lambda message: message.text == "Hijo de puta")
-def command_text_hi(m):
-    bot.send_message(m.chat.id, "Chupacables")
-@bot.message_handler(func=lambda message: message.text == "Capullo")
-def command_text_hi(m):
-    bot.send_message(m.chat.id, "Pagafantas")
-    # default handler for every other text
+#@bot.message_handler(func=lambda message: message.text == "Hijoputa")
+#def command_text_hi(m):
+#    bot.send_message(m.chat.id, "Bocachancla")
+
+#Esto responde a mensajes especificos
 
 
 @bot.message_handler(func=lambda message: True, content_types=['text'])
