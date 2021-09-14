@@ -128,8 +128,7 @@ def command_long_text(m):
         os.system("./actualizar_bot.sh")
         result = f.read()
         bot.send_message(cid, ""+result)
-    
-    
+
 # Mira temperaturas
 @bot.message_handler(commands=['temp'])
 def command_long_text(m):
