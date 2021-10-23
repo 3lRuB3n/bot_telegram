@@ -34,7 +34,7 @@ def get_user_step(uid):
     else:
         knownUsers.append(uid)
         userStep[uid] = 0
-        print "New user detected, who hasn't used \"/start\" yet"
+        print ("New user detected, who hasn't used \"/start\" yet")
         return 0
 
 # only used for console output now
