@@ -21,6 +21,8 @@ commands = { # command description used in the "help" command
 #            ,'actualizar_bot': 'Descarga la última versión del bot en el repositorio de github: https://github.com/3lRuB3n/bot_telegram'
 }
 
+
+
 hideBoard = types.ReplyKeyboardRemove() # if sent as reply_markup, will hide the keyboard
 
 # error handling if user isn't known yet
@@ -67,6 +69,14 @@ def command_help(m):
         help_text += "/" + key + ": "
         help_text += commands[key] + "\n"
     bot.send_message(cid, help_text)
+
+@bot.message_handler(func=lambda message: message.text == "Ponme sonidos de ambiente")
+def command_text_hi(m):
+    bot.send_message(m.chat.id, "¿Alguno en concreto?")
+    mensaje = "Estos son los disponibles:"
+    for sfx in os.listdir("/home/pi/sfx"):
+        mensaje = mensaje + "\n\t" + sfx
+    bot.send_message(m.chat.id, mensaje)
 
 # Reinicia servidor
 @bot.message_handler(commands=['reinicia'])
