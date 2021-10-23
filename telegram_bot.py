@@ -12,13 +12,13 @@ knownUsers = [681682244] # todo: save these in a file,
 userStep = {} # so they won't reset every time the bot restarts
 
 commands = { # command description used in the "help" command
-            'ayuda': 'Da informacion sobre los comandos disponibles',
-            'exec': 'Ejecuta un comando',
-            'temp': 'Comprueba la temperatura de la raspberry',
-            'reinicia': 'Reinicia el equipo',
-            'apaga': 'Apaga el equipo',
-            'actualizar_equipo': 'Descarga, instala y elimina los paquetes de software',
-            'actualizar_bot': 'Descarga la última versión del bot en el repositorio de github: https://github.com/3lRuB3n/bot_telegram'
+            'ayuda': 'Da informacion sobre los comandos disponibles'
+            ,'exec': 'Ejecuta un comando'
+            ,'temp': 'Comprueba la temperatura de la raspberry'
+            ,'reinicia': 'Reinicia el equipo'
+            ,'apaga': 'Apaga el equipo'
+            ,'actualizar_equipo': 'Descarga, instala y elimina los paquetes de software'
+#            ,'actualizar_bot': 'Descarga la última versión del bot en el repositorio de github: https://github.com/3lRuB3n/bot_telegram'
 }
 
 hideBoard = types.ReplyKeyboardRemove() # if sent as reply_markup, will hide the keyboard
@@ -56,7 +56,7 @@ def command_start(m):
     if cid not in knownUsers:
         knownUsers.append(cid)
         userStep[cid] = 0
-#        command_help(m) # show the new user the help page
+        command_help(m) # show the new user the help page
 
 # help page
 @bot.message_handler(commands=['ayuda'])
@@ -113,7 +113,7 @@ def command_long_text(m):
     result = f.read()
     bot.send_message(cid, ""+result)
 
-# Descarga telegram_bot.py
+"""# Descarga telegram_bot.py
 @bot.message_handler(commands=['actualizar_bot'])
 def command_long_text(m):
     cid = m.chat.id
@@ -128,6 +128,7 @@ def command_long_text(m):
         os.system("./actualizar_bot.sh")
         result = f.read()
         bot.send_message(cid, ""+result)
+"""
 
 # Mira temperaturas
 @bot.message_handler(commands=['temp'])
@@ -152,9 +153,9 @@ def command_long_text(m):
     bot.send_message(cid, "Resultado: "+result)
 
 
-#@bot.message_handler(func=lambda message: message.text == "Hijoputa")
+#@bot.message_handler(func=lambda message: message.text == "Texto_entrada")
 #def command_text_hi(m):
-#    bot.send_message(m.chat.id, "Bocachancla")
+#    bot.send_message(m.chat.id, "Texto_salida")
 
 #Esto responde a mensajes especificos
 
