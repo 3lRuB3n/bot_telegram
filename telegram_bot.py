@@ -75,12 +75,12 @@ def command_help(m):
 @bot.message_handler(func=lambda message: message.text == "Pon sonidos de ambiente")
 def command_text_hi(m):
     bot.send_message(m.chat.id, "¿Alguno en concreto?")
-    @bot.message_handler(func=lambda message: message.text == "Si")
-    def mensaje_sfx_si(m):
-        mensaje = "Estos son los disponibles:"
-        for sfx in os.listdir("/home/pi/sfx"):
-            mensaje = mensaje + "\n\t" + sfx
-        bot.send_message(m.chat.id, mensaje)
+    #@bot.message_handler(func=lambda message: message.text == "Si")
+    #def mensaje_sfx_si(m):
+        #mensaje = "Estos son los disponibles:"
+        #for sfx in os.listdir("/home/pi/sfx"):
+        #    mensaje = mensaje + "\n\t" + sfx
+        #bot.send_message(m.chat.id, mensaje)
 #    @bot.message_handler(func=lambda message: message.text == "No")
 #    def mensaje_sfx_no(m):
     bot.send_message(m.caht.id, "Pondre uno aleatorio")
