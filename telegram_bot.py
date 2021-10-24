@@ -70,13 +70,19 @@ def command_help(m):
         help_text += commands[key] + "\n"
     bot.send_message(cid, help_text)
 
+# De momento enumera los efectos de sonido disponibles
 @bot.message_handler(func=lambda message: message.text == "Ponme sonidos de ambiente")
 def command_text_hi(m):
     bot.send_message(m.chat.id, "¿Alguno en concreto?")
-    mensaje = "Estos son los disponibles:"
-    for sfx in os.listdir("/home/pi/sfx"):
-        mensaje = mensaje + "\n\t" + sfx
-    bot.send_message(m.chat.id, mensaje)
+    @bot.message_handler(func=lambda message: message.text == "Si")
+    def mensaje_sfx_si(m):
+        mensaje = "Estos son los disponibles:"
+        for sfx in os.listdir("/home/pi/sfx"):
+            mensaje = mensaje + "\n\t" + sfx
+        bot.send_message(m.chat.id, mensaje)
+    @bot.message_handler(func=lambda message: message.text == "No")
+    def mensaje_sfx_no(m):
+        bot.send_message(m.caht.id, "Pondré uno aleatorio")
 
 # Reinicia servidor
 @bot.message_handler(commands=['reinicia'])
@@ -135,7 +141,7 @@ def command_long_text(m):
         def command_text_hi(m):
         bot.send_message(m.chat.id, "Ahora mismo")
         
-        os.system("./actualizar_bot.sh")
+        os.system("git pull")
         result = f.read()
         bot.send_message(cid, ""+result)
 """
