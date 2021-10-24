@@ -17,8 +17,8 @@ commands = { # command description used in the "help" command
             ,'temp': 'Comprueba la temperatura de la raspberry'
             ,'reinicia': 'Reinicia el equipo'
             ,'apaga': 'Apaga el equipo'
-            ,'actualizar_equipo': 'Descarga, instala y elimina los paquetes de software'
-#            ,'actualizar_bot': 'Descarga la última versión del bot en el repositorio de github: https://github.com/3lRuB3n/bot_telegram'
+            ,'actualizar_equipo': 'Actualiza la Raspberry pi'
+            ,'actualizar_bot': 'Descarga la última versión de este repositorio: https://github.com/3lRuB3n/bot_telegram'
 }
 
 
@@ -103,7 +103,8 @@ def command_long_text(m):
     time.sleep(3)
     bot.send_message(cid, ".")
     os.system("sudo shutdown now")
-    
+
+"""
 #Actualiza el equipo
 @bot.message_handler(commands=['actualizar_equipo'])
 def command_long_text(m):
@@ -128,8 +129,9 @@ def command_long_text(m):
     os.system("sudo apt-get autoclean -y")    #elimina paquetes antiguos
     result = f.read()
     bot.send_message(cid, ""+result)
+"""
 
-"""# Descarga telegram_bot.py
+# Descarga telegram_bot.py
 @bot.message_handler(commands=['actualizar_bot'])
 def command_long_text(m):
     cid = m.chat.id
@@ -144,13 +146,15 @@ def command_long_text(m):
         os.system("git pull")
         result = f.read()
         bot.send_message(cid, ""+result)
-"""
+        bot.send_chat_action(cid, 'typing')
+        time.sleep(3)
+        bot.send_message(cid, "Los cambios se aplicaran en el siguiente reinicio")
 
 # Mira temperaturas
 @bot.message_handler(commands=['temp'])
 def command_long_text(m):
     cid = m.chat.id
-    bot.send_message(cid, "Vamos a comprobar si has puesto caliente a tu equipo...")
+    bot.send_message(cid, "Vamos a la temperatura...")
     bot.send_chat_action(cid, 'typing') # show the bot "typing" (max. 5 secs)
     time.sleep(2)
     f = os.popen("temperatura")
