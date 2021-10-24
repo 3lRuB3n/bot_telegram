@@ -86,6 +86,7 @@ def command_text_hi(m):
     bot.send_message(m.chat.id, "Pondré uno aleatorio")
     sfx = os.listdir("/home/pi/sfx")
     os.send("play /home/pi/sfx/{}".format(sfx))
+    bot.sen_message(m.chat.id, "Reproduciendo: {}".format(sfx))
 
 # Reinicia servidor
 @bot.message_handler(commands=['reinicia'])
