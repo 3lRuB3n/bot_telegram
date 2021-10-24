@@ -139,8 +139,7 @@ def command_long_text(m):
     bot.send_message(cid, "¿Estas seguro de que quieres hacerlo, el equipo tendrá que reiniciarse?")
     
     @bot.message_handler(func=lambda message: message.text == "Si")
-    if message.text == "Si":
-        def command_text_hi(m):
+    def command_text_hi(m):
         bot.send_message(m.chat.id, "Ahora mismo")
         
         os.system("git pull")
