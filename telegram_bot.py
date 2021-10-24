@@ -69,9 +69,10 @@ def command_help(m):
         help_text += "/" + key + ": "
         help_text += commands[key] + "\n"
     bot.send_message(cid, help_text)
+    bot.send_message(cid, "También puedo poner efectos de sonido")
 
 # De momento enumera los efectos de sonido disponibles
-@bot.message_handler(func=lambda message: message.text == "Ponme sonidos de ambiente")
+@bot.message_handler(func=lambda message: message.text == "Pon sonidos de ambiente")
 def command_text_hi(m):
     bot.send_message(m.chat.id, "¿Alguno en concreto?")
     @bot.message_handler(func=lambda message: message.text == "Si")
@@ -83,6 +84,8 @@ def command_text_hi(m):
     @bot.message_handler(func=lambda message: message.text == "No")
     def mensaje_sfx_no(m):
         bot.send_message(m.caht.id, "Pondré uno aleatorio")
+        for sfx in os.listdir("/home/pi/sfx"):
+        os.send("play /home/pi/sfx/{}".forat(sfx))
 
 # Reinicia servidor
 @bot.message_handler(commands=['reinicia'])
