@@ -83,9 +83,9 @@ def command_text_hi(m):
         #bot.send_message(m.chat.id, mensaje)
 #    @bot.message_handler(func=lambda message: message.text == "No")
 #    def mensaje_sfx_no(m):
-    bot.send_message(m.caht.id, "Pondre uno aleatorio")
+    bot.send_message(m.chat.id, "Pondré uno aleatorio")
     sfx = os.listdir("/home/pi/sfx")
-    os.send("play /home/pi/sfx/{}".forat(sfx))
+    os.send("play /home/pi/sfx/{}".format(sfx))
 
 # Reinicia servidor
 @bot.message_handler(commands=['reinicia'])
